@@ -1,0 +1,11 @@
+server {
+	listen 8090;
+	listen [::]:8090;
+	server_name yourdomain.com.br;
+
+	location / {
+		include proxy_params;
+		proxy_pass http://192.168.0.3:80/;
+	}
+
+}
